@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1f1f1f;
+  box-shadow: 0 0.19vh 0.37vh rgba(0, 0, 0, 0.3); 
+  z-index: 1500;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 1.7vw; 
+}
+
+.left-icons {
+  display: flex;
+  gap: 1vw; 
+}
+
+.left-icons img {
+  width: 4vh;            
+  height: 4vh;           
+  aspect-ratio: 1 / 1;      
+  cursor: pointer;
+  border: none;
+  object-fit: contain;      
+  transition: transform 0.2s;
+}
+
+.left-icons img:hover {
+  transform: scale(1.2);
+}
+
+.home-button {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 3vh; 
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.home-button:hover {
+  color: #bb86fc;
+}
+
+.center-home {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.button {
+  list-style: none;
+  display: flex;
+  gap: 1.5vw; 
+  margin: 0;
+}
+
+.button a {
+  font-size: 2.5vh; 
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.button a[href="about.html"]:hover,
+.button a[href="experience.html"]:hover,
+.button a[href="projects.html"]:hover {
+  color: #bb86fc;
+}
+
+main {
+  padding: 9vh 2vw 3vh 2vw; 
+  max-width: 70vw; 
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 6vh; 
+}
+
+h1 {
+  font-size: 6vh; 
+  margin-bottom: 1.5vh; 
+  color: #ffffff;
+  text-align: center;
+}
+
+h2 {
+  font-size: 4.5vh; 
+  margin-bottom: 1.5vh; 
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 3.2vh; 
+  margin-bottom: 1.5vh; 
+  color: #ffffff;
+}
+
+p {
+  font-size: 2.5vh; 
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.vertical-line {
+  border-left: 2px solid #ffffff;  
+  padding-left: 16px;                                 
+}
+
+.profile-pic {
+  width: 30vh; 
+  height: 30vh; 
+  border-radius: 50%;
+  object-fit: cover; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1200px) {
+  
+  .left-icons img {
+    width: 3.2vh;            
+    height: 3.2vh;
+  }
+
+  .home-button {
+    font-size: 2.5vh; 
+  }
+
+  .button a {
+    font-size: 1.5vh; 
+  }
+
+}
