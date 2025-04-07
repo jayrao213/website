@@ -12,6 +12,8 @@ body {
   scroll-behavior: smooth;
   touch-action: manipulation;
   overscroll-behavior: none;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 header {
