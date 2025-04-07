@@ -10,6 +10,8 @@ body {
   background-color: #121212;
   color: #ffffff;
   scroll-behavior: smooth;
+  touch-action: manipulation;
+  overscroll-behavior: none;
 }
 
 header {
