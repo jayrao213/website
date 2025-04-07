@@ -104,6 +104,7 @@ h2 {
   font-size: 4vh; 
   margin-bottom: 1.5vh; 
   color: #ffffff;
+  margin: 0;
 }
 
 p {
@@ -114,21 +115,13 @@ p {
 
 .vertical-line {
   border-left: 2px solid #ffffff;  
-  padding-left: 16px;                                 
+  padding-left: 16px;
 }
 
 .project {
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
-
-.github-icon {
-  position: relative;
-  top: 1vh;
-  left: 1.5vh;
-}
-
 
 .profile-pic {
   width: 30vh; 
