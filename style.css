@@ -135,17 +135,21 @@ h2 {
 
 @media (max-width: 1200px) {
   .button-container {
-    margin-bottom: 19svh;
+    margin-bottom: 11svh;
   }
 
   .tall-button {
-    height: 42svh; 
+    height: 50svh; 
   }
 
   .short-button {
-    height: 20svh; 
+    height: 24svh; 
   }
 
+  .button {
+    font-size: 2svh;
+  }
+}
   .button {
     font-size: 2svh;
   }
