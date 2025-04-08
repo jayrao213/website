@@ -11,7 +11,7 @@ header {
   top: 0;
   width: 100%;
   background-color: #1f1f1f;
-  box-shadow: 0 0.19svh 0.37svh rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
   z-index: 1500;
 }
 
@@ -126,8 +126,8 @@ p {
 }
 
 .vertical-line {
-  border-left: 2px solid #ffffff;
-  padding-left: 16px;
+  border-left: 0.125rem solid #ffffff;
+  padding-left: 1rem;
 }
 
 .project {
