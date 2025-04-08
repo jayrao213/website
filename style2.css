@@ -20,21 +20,21 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2svh 1.7vw; 
+  padding: clamp(1rem, 2vh, 2rem) 1.7vw;
 }
 
 .left-icons {
   display: flex;
-  gap: 1vw; 
+  gap: 1vw;
 }
 
 .left-icons img {
   width: clamp(1.5rem, 4vw, 2rem);
-  height: clamp(1.5rem, 4vw, 2rem);           
-  aspect-ratio: 1 / 1;      
+  height: clamp(1.5rem, 4vw, 2rem);
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   border: none;
-  object-fit: contain;      
+  object-fit: contain;
   transition: transform 0.2s;
 }
 
@@ -65,7 +65,7 @@ header {
 .button {
   list-style: none;
   display: flex;
-  gap: 1.5vw; 
+  gap: 1.5vw;
   margin: 0;
 }
 
@@ -84,49 +84,49 @@ header {
 }
 
 main {
-  padding: 9svh 2vw 3svh 2vw; 
-  max-width: 70vw; 
+  padding: clamp(4rem, 9vh, 6rem) 2vw clamp(2rem, 3vh, 4rem) 2vw;
+  max-width: 70vw;
   margin: 0 auto;
 }
 
 section {
-  margin-bottom: 6svh; 
+  margin-bottom: clamp(3rem, 6vh, 5rem);
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6vw, 3rem); 
-  margin-bottom: 1.5svh; 
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  margin-bottom: clamp(1rem, 2vh, 2rem);
   color: #ffffff;
   text-align: center;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem); 
-  margin-bottom: 1.5svh; 
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: clamp(1rem, 2vh, 2rem);
   color: #ffffff;
 }
 
 h3 {
-  font-size: clamp(1.15rem, 4vw, 1.4rem); 
-  margin-bottom: 1.5svh; 
+  font-size: clamp(1.15rem, 4vw, 1.4rem);
+  margin-bottom: clamp(1rem, 2vh, 2rem);
   color: #ffffff;
 }
 
 h4 {
-  font-size: clamp(1.325rem, 4vw, 1.7rem); 
-  margin-bottom: 1.5svh; 
+  font-size: clamp(1.325rem, 4vw, 1.7rem);
+  margin-bottom: clamp(1rem, 2vh, 2rem);
+  margin-top: clamp(0.5rem, 1.5vh, 2rem);
   color: #ffffff;
-  margin-top: 1svh;
 }
 
 p {
-  font-size: clamp(1rem, 2.5vw, 1.2rem); 
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   line-height: 1.6;
   color: #ffffff;
 }
 
 .vertical-line {
-  border-left: 2px solid #ffffff;  
+  border-left: 2px solid #ffffff;
   padding-left: 16px;
 }
 
@@ -139,7 +139,7 @@ p {
   width: clamp(10rem, 30vw, 15rem);
   height: clamp(10rem, 30vw, 15rem);
   border-radius: 50%;
-  object-fit: cover; 
+  object-fit: cover;
   display: block;
   margin-left: auto;
   margin-right: auto;
