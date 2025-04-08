@@ -11,7 +11,7 @@ header {
   top: 0;
   width: 100%;
   background-color: #1f1f1f;
-  box-shadow: 0 0.19vh 0.37vh rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 0.19svh 0.37svh rgba(0, 0, 0, 0.3); 
   z-index: 1500;
 }
 
@@ -20,7 +20,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2vh 1.7vw; 
+  padding: 2svh 1.7vw; 
 }
 
 .left-icons {
@@ -29,8 +29,8 @@ header {
 }
 
 .left-icons img {
-  width: 4vh;            
-  height: 4vh;           
+  width: 4svh;            
+  height: 4svh;           
   aspect-ratio: 1 / 1;      
   cursor: pointer;
   border: none;
@@ -46,7 +46,7 @@ header {
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
-  font-size: 3vh; 
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
   transition: color 0.3s;
   cursor: pointer;
 }
@@ -70,7 +70,7 @@ header {
 }
 
 .button a {
-  font-size: 2.5vh; 
+  font-size: clamp(1rem, 2vw, 1.6rem);
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
@@ -84,31 +84,31 @@ header {
 }
 
 main {
-  padding: 9vh 2vw 3vh 2vw; 
+  padding: 9svh 2vw 3svh 2vw; 
   max-width: 70vw; 
   margin: 0 auto;
 }
 
 section {
-  margin-bottom: 6vh; 
+  margin-bottom: 6svh; 
 }
 
 h1 {
-  font-size: 6vh; 
-  margin-bottom: 1.5vh; 
+  font-size: clamp(2.5rem, 6vw, 3.5rem); 
+  margin-bottom: 1.5svh; 
   color: #ffffff;
   text-align: center;
 }
 
 h2 {
-  font-size: 3.5vh; 
-  margin-bottom: 1.5vh; 
+  font-size: clamp(1.5rem, 4vw, 2rem); 
+  margin-bottom: 1.5svh; 
   color: #ffffff;
   margin: 0;
 }
 
 p {
-  font-size: 2.5vh; 
+  font-size: clamp(1rem, 2.5vw, 1.2rem); 
   line-height: 1.6;
   color: #ffffff;
 }
@@ -124,8 +124,8 @@ p {
 }
 
 .profile-pic {
-  width: 30vh; 
-  height: 30vh; 
+  width: 30svh; 
+  height: 30svh; 
   border-radius: 50%;
   object-fit: cover; 
   display: block;
@@ -134,18 +134,18 @@ p {
 }
 
 @media (max-width: 1200px) {
-  
+
   .left-icons img {
-    width: 3.2vh;            
-    height: 3.2vh;
+    width: 3.2svh;            
+    height: 3.2svh;
   }
 
   .home-button {
-    font-size: 2.5vh; 
+    font-size: clamp(1rem, 2vw, 1.5rem); 
   }
 
   .button a {
-    font-size: 1.5vh; 
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem); 
   }
 
 }
