@@ -84,7 +84,7 @@ header {
 }
 
 main {
-  padding: clamp(4rem, 9vh, 6rem) 2vw clamp(2rem, 3vh, 4rem) 2vw;
+  padding: 4rem 2vw 2rem 2vw;
   max-width: 70vw;
   margin: 0 auto;
 }
