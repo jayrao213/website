@@ -18,25 +18,24 @@ body {
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100svh;
 }
 
 h1 {
-  margin-top: 7vh; 
-  font-size: 9vh;  
+  margin-top: 7svh; 
+  font-size: 9svh;  
   color: #ffffff;
 }
 
 h2 {
-  margin-top: -3.7vh; 
-  font-size: 3vh;  
+  margin-top: -3.7svh; 
+  font-size: 3svh;  
   color: #ffffff;
 }
 
 .image-buttons {
   margin-top: 0;
-  margin-bottom: 2.78vh; 
+  margin-bottom: 2.78svh; 
   text-decoration: none;
   outline: none;     
 }
@@ -57,8 +56,8 @@ h2 {
 }
 
 .image-buttons img {
-  width: 4vh;            
-  height: 4vh;           
+  width: 4svh;            
+  height: 4svh;           
   aspect-ratio: 1 / 1;      
   margin: 0 0.52vw;
   cursor: pointer;
@@ -67,38 +66,37 @@ h2 {
   transition: transform 0.2s;
 }
 
-
 .image-buttons img:hover {
   transform: scale(1.2);
 }
 
 .button-container {
   margin-top: auto;
-  margin-bottom: 5vh; 
+  margin-bottom: 5svh; 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: 2vh; 
+  gap: 2svh; 
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
-  gap: 2vh; 
+  gap: 2svh; 
 }
 
 .button {
   width: 43vw; 
   border-radius: 3vw; 
-  font-size: 3.2vh; 
+  font-size: 3.2svh; 
   font-weight: bold;
   text-decoration: none;
   color: #ffffff;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  padding: 3vh; 
+  padding: 3svh; 
   text-align: left;
   transition: transform 0.15s;
   position: relative;
@@ -110,11 +108,11 @@ h2 {
 }
 
 .tall-button {
-  height: 56vh; 
+  height: 56svh; 
 }
 
 .short-button {
-  height: 27vh; 
+  height: 27svh; 
 }
 
 .btn1 { background-color: #1c1c1c; } 
@@ -137,19 +135,18 @@ h2 {
 
 @media (max-width: 1200px) {
   .button-container {
-    margin-bottom: 19vh;
+    margin-bottom: 19svh;
   }
 
   .tall-button {
-  height: 42vh; 
+    height: 42svh; 
   }
 
-.short-button {
-  height: 20vh; 
+  .short-button {
+    height: 20svh; 
   }
 
   .button {
-    font-size: 2vh;
+    font-size: 2svh;
   }
-
 }
