@@ -93,7 +93,7 @@ h2 {
 .button {
   width: 43vw; 
   border-radius: 3vw; 
-  font-size: clamp(1rem, 1rem + 1vw, 2rem); 
+  font-size: 3.2svh; 
   font-weight: bold;
   text-decoration: none;
   color: #ffffff;
@@ -150,10 +150,6 @@ h2 {
     height: 24svh; 
   }
 
-  .button {
-    font-size: 2svh;
-  }
-}
   .button {
     font-size: 2svh;
   }
