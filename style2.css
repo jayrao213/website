@@ -130,9 +130,9 @@ p {
   padding-left: 1rem;
 }
 
-.project {
-  display: flex;
-  align-items: center;
+.github {
+  height: 2rem; 
+  vertical-align: top;
 }
 
 .profile-pic {
