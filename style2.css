@@ -131,7 +131,7 @@ p {
 }
 
 .github {
-  height: 2rem; 
+  height: clamp(1.5rem, 4vw, 2rem); 
   vertical-align: top;
 }
 
