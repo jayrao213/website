@@ -101,7 +101,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.48rem, 4vw, 2rem);
+  font-size: clamp(1.45rem, 4vw, 2rem);
   margin-bottom: clamp(1rem, 2vh, 2rem);
   color: #ffffff;
 }
