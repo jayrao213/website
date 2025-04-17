@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button id="modeToggle">🎭 Fun Mode</button>
+
   <div class="animated-title">
     <div class="text-top">
       <div>
@@ -44,22 +46,89 @@
 
   <div class="button-container">
     <a href="about.html" class="button btn1 tall-button">
-      <img src="loop.webp" class="loop">
+      <img class="loop" src="loop.png" data-fun="loop.webp" data-serious="loop.png">
       <span class="text-mask">About Me</span>
     </a>
   
     <div class="right-column">
       <a href="experience.html" class="button btn2 short-button">
-        <img src="pusha_t.gif" class="loop">
+        <img class="loop" style="display: none;" data-fun="pusha_t.gif" data-serious="">
         <span class="black-text">Experience</span>
       </a>
   
       <a href="projects.html" class="button btn3 short-button">
-        <img src="flowers.gif" class="loop">
+        <img class="loop" style="display: none;" data-fun="flowers.gif" data-serious="">
         <span class="white-text">Projects</span>
       </a>
     </div>
   </div>  
 
+  <script>
+    const toggleBtn = document.getElementById("modeToggle");
+    const loopImgs = document.querySelectorAll(".loop");
+  
+    const isFunMode = localStorage.getItem('funMode') === 'true';
+    document.body.classList.toggle("fun-mode", isFunMode);
+    toggleBtn.textContent = isFunMode ? "🧑‍💼 Serious Mode" : "🎭 Fun Mode";
+  
+    loopImgs.forEach(img => {
+      const funSrc = img.dataset.fun;
+      const seriousSrc = img.dataset.serious;
+  
+      if (isFunMode) {
+        img.style.display = "";
+        img.src = funSrc;
+      } else {
+        if (seriousSrc) {
+          img.src = seriousSrc;
+          img.style.display = "";
+        } else {
+          img.style.display = "none";
+        }
+      }
+    });
+  
+    toggleBtn.addEventListener("click", () => {
+      const isFunNow = !document.body.classList.contains("fun-mode");
+  
+      if (isFunNow) {
+        toggleBtn.style.transition = "none";
+        toggleBtn.style.opacity = "0";
+      }
+  
+      document.body.classList.toggle("fun-mode", isFunNow);
+      localStorage.setItem("funMode", isFunNow);
+      toggleBtn.textContent = isFunNow ? "🧑‍💼 Serious Mode" : "🎭 Fun Mode";
+  
+      setTimeout(() => {
+        toggleBtn.style.transition = "";
+        toggleBtn.style.opacity = "";
+      }, 10);
+  
+      loopImgs.forEach(img => {
+        const funSrc = img.dataset.fun;
+        const seriousSrc = img.dataset.serious;
+  
+        if (isFunNow) {
+          img.style.display = "";
+          img.src = funSrc;
+        } else {
+          if (seriousSrc) {
+            img.src = seriousSrc;
+            img.style.display = "";
+          } else {
+            img.style.display = "none";
+          }
+        }
+      });
+    });
+  
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', e => {
+        localStorage.setItem('funMode', document.body.classList.contains('fun-mode'));
+      });
+    });
+  </script> 
+  
 </body>
 </html>

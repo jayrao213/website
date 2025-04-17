@@ -15,6 +15,7 @@
             <a href="https://github.com/jayrao213?tab=repositories" target="_blank"><img src="github.png" alt="GitHub"></a>
             <a href="Jay_Rao_Resume.pdf" target="_blank"><img src="resume.png" alt="Resume"></a>
             <a href="mailto:jayrao2028@u.northwestern.edu"><img src="email.png" alt="Email"></a>
+            <a id="funToggle" title="Toggle Fun Mode" class="emoji-toggle">🎭</a>
           </div>
 
           <div class="center-home">
@@ -90,7 +91,7 @@
           return charset[Math.floor(Math.random() * charset.length)];
         }
       
-        function animateText(el) {
+        function scrambleText(el) {
           const original = el.dataset.original;
           if (!original) return;
       
@@ -113,11 +114,7 @@
             spans.forEach((span, i) => {
               if (chars[i] !== ' ') {
                 const revealThreshold = i / chars.length;
-                if (percent >= revealThreshold) {
-                  span.textContent = chars[i];
-                } else {
-                  span.textContent = randomChar();
-                }
+                span.textContent = percent >= revealThreshold ? chars[i] : randomChar();
               }
             });
       
@@ -127,22 +124,84 @@
           requestAnimationFrame(scramble);
         }
       
-        window.addEventListener('DOMContentLoaded', () => {
+        function animateH1() {
           const h1 = document.querySelector('h1');
           if (!h1) return;
       
-          h1.dataset.original = h1.textContent.trim();
-          h1.style.opacity = '0';
-          h1.style.transform = 'translateY(20px)';
+          const shouldAnimate = document.body.classList.contains('fun-mode');
+      
           h1.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       
-          setTimeout(() => {
+          if (shouldAnimate) {
+            h1.style.opacity = '0';
+            h1.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              h1.style.opacity = '1';
+              h1.style.transform = 'translateY(0)';
+              scrambleText(h1);
+            }, 300);
+          } else {
+            h1.textContent = h1.dataset.original;
             h1.style.opacity = '1';
-            h1.style.transform = 'translateY(0)';
-            animateText(h1);
-          }, 300);
+            h1.style.transform = 'none';
+          }
+        }
+      
+        function resetAnimations() {
+          const icons = document.querySelectorAll('.left-icons a img, .button li a');
+          icons.forEach(icon => {
+            icon.style.animation = 'none';
+            void icon.offsetHeight;
+            icon.style.animation = '';
+          });
+      
+          const home = document.querySelector('.home-button');
+          if (home) {
+            home.style.animation = 'none';
+            void home.offsetHeight;
+            home.style.animation = '';
+          }
+      
+          const emoji = document.querySelector('.emoji-toggle');
+          if (emoji) {
+            emoji.style.animation = 'none';
+            void emoji.offsetHeight;
+            emoji.style.animation = '';
+          }
+        }
+      
+        window.addEventListener('DOMContentLoaded', () => {
+          const h1 = document.querySelector('h1');
+          if (h1) {
+            h1.dataset.original = h1.textContent.trim();
+          }
+      
+          const savedMode = localStorage.getItem('funMode');
+          const isFun = savedMode === 'true';
+          document.body.classList.toggle('fun-mode', isFun);
+      
+          const toggle = document.getElementById('funToggle');
+          if (toggle) {
+            toggle.textContent = isFun ? '🧑‍💼' : '🎭';
+      
+            toggle.addEventListener('click', () => {
+              const isNowFun = document.body.classList.toggle('fun-mode');
+              localStorage.setItem('funMode', isNowFun);
+              toggle.textContent = isNowFun ? '🧑‍💼' : '🎭';
+              resetAnimations();
+              animateH1();
+            });
+          }
+      
+          animateH1();
         });
-      </script>  
 
+        document.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', e => {
+            localStorage.setItem('funMode', document.body.classList.contains('fun-mode'));
+          });
+      });
+      </script>
+                   
 </body>
 </html>
