@@ -69,7 +69,7 @@
   
     const isFunMode = localStorage.getItem('funMode') === 'true';
     document.body.classList.toggle("fun-mode", isFunMode);
-    toggleBtn.textContent = isFunMode ? "🧑‍💼 Serious Mode" : "🎭 Fun Mode";
+    toggleBtn.textContent = isFunMode ? "🧑‍💼" : "🎭";
   
     loopImgs.forEach(img => {
       const funSrc = img.dataset.fun;
@@ -98,7 +98,7 @@
   
       document.body.classList.toggle("fun-mode", isFunNow);
       localStorage.setItem("funMode", isFunNow);
-      toggleBtn.textContent = isFunNow ? "🧑‍💼 Serious Mode" : "🎭 Fun Mode";
+      toggleBtn.textContent = isFunNow ? "🧑‍💼" : "🎭";
   
       setTimeout(() => {
         toggleBtn.style.transition = "";
