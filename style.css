@@ -169,10 +169,28 @@ body {
 }
 
 .text-mask {
-  font-size: 4svh;
+  font-size: clamp(2svh, 4svh, 4svh);
   font-weight: bold;
   mix-blend-mode: difference; 
   color: #ffffff;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.white-text {
+  font-size: 4svh;
+  font-weight: bold;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.black-text {
+  font-size: 4svh;
+  font-weight: bold;
+  color: #000000;
   position: relative;
   z-index: 2;
   pointer-events: none;
@@ -219,5 +237,17 @@ body {
 
   .button {
     font-size: 2svh;
+  }
+
+  .text-mask {
+    font-size: 3svh
+  }
+  
+  .white-text {
+    font-size: 3svh;
+  }
+  
+  .black-text {
+    font-size: 3svh;
   }
 }
