@@ -36,10 +36,41 @@ header {
   border: none;
   object-fit: contain;
   transition: transform 0.2s;
+  transition: scale 0.2s ease;
 }
 
 .left-icons img:hover {
-  transform: scale(1.2);
+  scale: 1.2;
+}
+
+.left-icons a img {
+  animation: slideInLeftBounce 0.8s ease forwards;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.left-icons a:nth-child(1) img {
+  animation: slideInLeftBounce 0.8s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.left-icons a:nth-child(2) img {
+  animation: slideInLeftBounce 0.8s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.left-icons a:nth-child(3) img {
+  animation: slideInLeftBounce 0.8s ease forwards;
+  animation-delay: 0.9s;
+  opacity: 0;
+}
+
+.left-icons a:nth-child(4) img {
+  animation: slideInLeftBounce 0.8s ease forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
 }
 
 .home-button {
@@ -48,11 +79,12 @@ header {
   font-weight: bold;
   font-size: clamp(1.2rem, 2.5vw, 1.7rem);
   transition: color 0.3s;
+  transition: scale 0.2s ease;
   cursor: pointer;
 }
 
 .home-button:hover {
-  color: #bb86fc;
+  scale: 1.2;
 }
 
 .center-home {
@@ -62,6 +94,12 @@ header {
   white-space: nowrap;
 }
 
+.center-home .home-button {
+  display: inline-block;
+  animation: bounceSmall 1s 2 forwards;
+  animation-delay: 0.3s;
+}
+  
 .button {
   list-style: none;
   display: flex;
@@ -77,10 +115,30 @@ header {
   transition: color 0.3s;
 }
 
-.button a[href="about.html"]:hover,
-.button a[href="experience.html"]:hover,
-.button a[href="projects.html"]:hover {
-  color: #bb86fc;
+.button a:hover {
+  scale: 1.2;
+  transition: scale 0.2s ease;
+}
+
+.button li a {
+  animation: slideInRightBounce 0.8s ease forwards;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  display: inline-block;
+}
+
+.button li:nth-child(2) a {
+  animation: slideInRightBounce 0.8s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+  display: inline-block;
+}
+
+.button li:nth-child(1) a {
+  animation: slideInRightBounce 0.8s ease forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+  display: inline-block;
 }
 
 main {
@@ -153,4 +211,46 @@ p {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+@keyframes slideInLeftBounce {
+  0% {
+    transform: translateX(-200%) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(30%) scale(1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(-10%) scale(0.98);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRightBounce {
+  0% {
+    transform: translateX(200%) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-30%) scale(1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(10%) scale(0.98);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceSmall {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-4px); }
+  60% { transform: translateY(2px); }
 }
