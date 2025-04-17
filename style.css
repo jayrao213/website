@@ -280,6 +280,9 @@ body {
 }
 
 @media (max-width: 1200px) {
+  .image-buttons {
+    gap: 5vw;
+  }
 
   .button-container {
     margin-bottom: 9svh;
