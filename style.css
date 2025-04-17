@@ -285,15 +285,15 @@ body {
   }
 
   .button-container {
-    margin-bottom: 9svh;
+    margin-bottom: 5svh;
   }
 
   .tall-button {
-    height: 52svh; 
+    height: 56svh; 
   }
 
   .short-button {
-    height: 25svh; 
+    height: 27svh; 
   }
 
   .button {
