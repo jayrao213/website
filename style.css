@@ -93,78 +93,57 @@ body {
 }
 
 .image-buttons {
-  margin-top: 0;
-  margin-bottom: 3.5svh; 
-  text-decoration: none;
-  outline: none;    
   display: flex;
   justify-content: center;
-  animation-delay: 2s; 
+  align-items: center;
+  margin-bottom: 3.5svh;
+  gap: 1vw;
 }
 
-.image-buttons a {
-  text-decoration: none;
-  outline: none;
-  border: none;
+.icon-wrapper {
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  will-change: transform;
 }
 
-.image-buttons a:focus,
-.image-buttons a:visited,
-.image-buttons a:active,
-.image-buttons a:focus-visible {
-  outline: none;
-  border: none;
-  box-shadow: none;
+.icon-wrapper:hover {
+  transform: translateY(-0.6svh) scale(1.05);
 }
 
 .image-buttons img {
-  width: 4svh;            
-  height: 4svh;           
-  aspect-ratio: 1 / 1;      
-  margin: 0 0.52vw;
-  cursor: pointer;
+  width: 4svh;
+  height: 4svh;
+  object-fit: contain;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  pointer-events: auto;
   border: none;
-  object-fit: contain;      
-  transition: transform 0.2s;
+  display: block;
 }
 
-.image-buttons img:hover {
-  transform: scale(1.2);
-}
-
-.image-buttons a img {
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.image-buttons a img {
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.image-buttons a:nth-child(1) img {
-  animation: 
+.image-buttons .icon-wrapper:nth-child(1) img {
+  animation:
     fromLeft 0.6s ease 2s forwards,
     spinCCW 1.2s ease 2.6s forwards,
     bounceTwice 0.6s ease 3.8s forwards;
 }
 
-.image-buttons a:nth-child(2) img {
-  animation: 
+.image-buttons .icon-wrapper:nth-child(2) img {
+  animation:
     fromBottom 0.6s ease 2s forwards,
     spinCCW 1.2s ease 2.6s forwards,
     bounceTwice 0.6s ease 3.8s forwards;
 }
 
-.image-buttons a:nth-child(3) img {
-  animation: 
+.image-buttons .icon-wrapper:nth-child(3) img {
+  animation:
     fromTop 0.6s ease 2s forwards,
     spinCW 1.2s ease 2.6s forwards,
     bounceTwice 0.6s ease 3.8s forwards;
 }
 
-.image-buttons a:nth-child(4) img {
-  animation: 
+.image-buttons .icon-wrapper:nth-child(4) img {
+  animation:
     fromRight 0.6s ease 2s forwards,
     spinCW 1.2s ease 2.6s forwards,
     bounceTwice 0.6s ease 3.8s forwards;
@@ -190,14 +169,14 @@ body {
   100% { transform: translateY(0) rotate(0deg); opacity: 1; }
 }
 
-@keyframes spinCCW {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(-720deg); }
-}
-
 @keyframes spinCW {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(720deg); }
+}
+
+@keyframes spinCCW {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-720deg); }
 }
 
 @keyframes bounceTwice {
@@ -301,6 +280,10 @@ body {
 }
 
 @media (max-width: 1200px) {
+  .image-buttons {
+    gap: 5vw;
+  }
+
   .button-container {
     margin-bottom: 9svh;
   }
