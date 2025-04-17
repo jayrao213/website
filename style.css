@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-}
-
 html, body {
   height: 100%;
   margin: 0;
@@ -91,6 +87,8 @@ h2 {
 }
 
 .button {
+  position: relative;
+  z-index: 1;
   width: 43vw; 
   border-radius: 3vw; 
   font-size: 4svh; 
@@ -111,17 +109,27 @@ h2 {
   transform: scale(1.01);
 }
 
+.text-mask {
+  font-size: 4svh;
+  font-weight: bold;
+  mix-blend-mode: difference; 
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .tall-button {
-  height: 56vh; 
+  height: 56svh; 
 }
 
 .short-button {
-  height: 27vh; 
+  height: 27svh; 
 }
 
 .btn1 { background-color: #1c1c1c; } 
 .btn2 { background-color: #ffffff; color:#121212;} 
-.btn3 { background-color: #656565; }
+.btn3 { background-color: #000000; }
 
 .loop {
   position: absolute;
