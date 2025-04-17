@@ -132,7 +132,7 @@ body:not(.fun-mode) .emoji-toggle {
 }
 
 .button a {
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-size: clamp(0.7rem, 2vw, 1.2rem);
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
