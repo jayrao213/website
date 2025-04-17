@@ -297,8 +297,8 @@ body {
   top: 1rem;
   right: 1rem;
   z-index: 9999;
-  padding: clamp(0.4rem, 0.6rem + 0.5vw, 1.2rem) clamp(0.8rem, 1rem + 1vw, 1.2rem);
-  font-size: clamp(0.5svh, 1.2svh + 1vw, 2.5svh);
+  padding: 0.6rem 1.2rem;
+  font-size: clamp(0.2svh, 0.4svh + 1.6vw, 2.5svh);
   font-weight: bold;
   background-color: #1c1c1c;
   color: #ffffff;
