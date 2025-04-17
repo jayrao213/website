@@ -82,5 +82,67 @@
   
       </main>
 
+      <script>
+        const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+        const duration = 2000;
+      
+        function randomChar() {
+          return charset[Math.floor(Math.random() * charset.length)];
+        }
+      
+        function animateText(el) {
+          const original = el.dataset.original;
+          if (!original) return;
+      
+          const chars = original.split('');
+          const spans = chars.map(char => {
+            const span = document.createElement('span');
+            span.textContent = char === ' ' ? ' ' : randomChar();
+            return span;
+          });
+      
+          el.textContent = '';
+          spans.forEach(span => el.appendChild(span));
+      
+          let start = null;
+          function scramble(time) {
+            if (!start) start = time;
+            const progress = time - start;
+            const percent = Math.min(progress / duration, 1);
+      
+            spans.forEach((span, i) => {
+              if (chars[i] !== ' ') {
+                const revealThreshold = i / chars.length;
+                if (percent >= revealThreshold) {
+                  span.textContent = chars[i];
+                } else {
+                  span.textContent = randomChar();
+                }
+              }
+            });
+      
+            if (percent < 1) requestAnimationFrame(scramble);
+          }
+      
+          requestAnimationFrame(scramble);
+        }
+      
+        window.addEventListener('DOMContentLoaded', () => {
+          const h1 = document.querySelector('h1');
+          if (!h1) return;
+      
+          h1.dataset.original = h1.textContent.trim();
+          h1.style.opacity = '0';
+          h1.style.transform = 'translateY(20px)';
+          h1.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      
+          setTimeout(() => {
+            h1.style.opacity = '1';
+            h1.style.transform = 'translateY(0)';
+            animateText(h1);
+          }, 300);
+        });
+      </script>  
+
 </body>
 </html>
