@@ -21,21 +21,80 @@ body {
   min-height: 100svh;
 }
 
-h1 {
-  margin-top: 7svh; 
-  font-size: 9svh;  
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  40%, 60% { transform: translate3d(0, 50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animated-title {
+  color: #ffffff;
+  width: 100%;
+  width: fit-content;
+  margin: 4svh auto 3svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-title > div {
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.animated-title > div div {
+  font-size: clamp(4.5svh, 5svh, 5.5svh);
+  font-weight: bold;
+  padding: 1svh 0;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.animated-title > div div span {
+  display: block;
+}
+
+.animated-title > .text-top {
+  border-bottom: 0.5svh solid #ffffff;
+}
+
+.animated-title > .text-top div {
+  animation: showTopText 1s ease forwards;
+  animation-delay: 0.4s;
+  transform: translateY(100%);
+  position: relative;
+}
+
+.animated-title > .text-top div span:first-child {
   color: #ffffff;
 }
 
-h2 {
-  margin-top: -3.7svh; 
-  font-size: 3svh;  
-  color: #ffffff;
+.animated-title > .text-bottom div {
+  animation: showBottomText 0.5s ease forwards;
+  animation-delay: 1.5s;
+  top: 0;
+  transform: translateY(-100%);
+  position: relative;
+}
+
+.highlight-name {
+  font-size: clamp(6svh, 7svh, 8svh);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1svh;
 }
 
 .image-buttons {
   margin-top: 0;
-  margin-bottom: 2.78svh; 
+  margin-bottom: 3.5svh; 
   text-decoration: none;
   outline: none;     
 }
