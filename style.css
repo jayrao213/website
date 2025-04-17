@@ -217,12 +217,13 @@ body {
   padding: 3svh; 
   text-align: left;
   transition: transform 0.15s;
+  transition: scale 0.2s ease;
   position: relative;
   overflow: hidden;
 }
 
 .button:hover {
-  transform: scale(1.01);
+  scale: 1.03;
 }
 
 .text-mask {
@@ -261,9 +262,21 @@ body {
   height: 27svh; 
 }
 
-.btn1 { background-color: #1c1c1c; } 
-.btn2 { background-color: #ffffff; color:#121212;} 
-.btn3 { background-color: #000000; }
+.btn1 { background-color: #1c1c1c; 
+  animation: bounceInLeft 0.8s ease 3.5s forwards;
+  opacity: 0;
+} 
+
+.btn2 { background-color: #ffffff; 
+  color:#121212;
+  animation: bounceInRight 0.8s ease 3.5s forwards;
+  opacity: 0;
+} 
+
+.btn3 { background-color: #000000;
+  animation: bounceInBottom 0.8s ease 3.5s forwards;
+  opacity: 0;
+}
 
 .loop {
   position: absolute;
@@ -277,6 +290,27 @@ body {
   z-index: 0;
   border-radius: 1.04vw; 
   pointer-events: none; 
+}
+
+@keyframes bounceInLeft {
+  0%   { transform: translateX(-150%) scale(0.9); opacity: 0; }
+  60%  { transform: translateX(10%) scale(1.05); opacity: 1; }
+  80%  { transform: translateX(-3%) scale(0.98); }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+@keyframes bounceInRight {
+  0%   { transform: translateX(150%) scale(0.9); opacity: 0; }
+  60%  { transform: translateX(-10%) scale(1.05); opacity: 1; }
+  80%  { transform: translateX(3%) scale(0.98); }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+@keyframes bounceInBottom {
+  0%   { transform: translateY(120%) scale(0.9); opacity: 0; }
+  60%  { transform: translateY(-5%) scale(1.05); opacity: 1; }
+  80%  { transform: translateY(2%) scale(0.98); }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 @media (max-width: 1200px) {
