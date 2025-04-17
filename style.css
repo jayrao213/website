@@ -273,7 +273,7 @@ body {
   opacity: 0;
 } 
 
-.btn3 { background-color: #000000;
+.btn3 { background-color: #1c1c1c;
   animation: bounceInBottom 0.8s ease 3.5s forwards;
   opacity: 0;
 }
