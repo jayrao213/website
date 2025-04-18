@@ -414,6 +414,19 @@ body:not(.fun-mode) .btn3 {
   animation: none !important;
 } 
 
+@keyframes attention-grab {
+  0%   { transform: scale(1) rotate(0deg); box-shadow: 0 0 0 transparent; }
+  20%  { transform: scale(1.1) rotate(5deg); box-shadow: 0 0 8px 2px #ad00f288; }
+  40%  { transform: scale(1.1) rotate(-5deg); box-shadow: 0 0 12px 4px #ad00f2aa; }
+  60%  { transform: scale(1.12) rotate(3deg); }
+  80%  { transform: scale(1.08) rotate(-3deg); }
+  100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 0 transparent; }
+}
+
+#modeToggle.popout {
+  animation: attention-grab 0.8s ease;
+}
+
 @media (max-width: 1200px) {
   .image-buttons {
     gap: 5vw;

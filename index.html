@@ -128,6 +128,18 @@
         localStorage.setItem('funMode', document.body.classList.contains('fun-mode'));
       });
     });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        const toggleBtn = document.getElementById("modeToggle");
+          if (toggleBtn && !document.body.classList.contains("fun-mode")) {
+            toggleBtn.classList.add("popout");
+            toggleBtn.addEventListener("animationend", () => {
+            toggleBtn.classList.remove("popout");
+          }, { once: true });
+        }
+      }, 1000);
+    });
   </script> 
   
 </body>
