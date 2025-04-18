@@ -390,7 +390,7 @@ body:not(.fun-mode) .image-buttons img {
 }
 
 body:not(.fun-mode) .button:hover {
-  scale: 1.03;
+  scale: 1.01;
 }
 
 body.fun-mode .btn1 {
