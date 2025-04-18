@@ -208,6 +208,30 @@ body {
   gap: 2svh; 
 }
 
+.button {
+  position: relative;
+  z-index: 1;
+  width: 43vw; 
+  border-radius: 3vw; 
+  font-size: 4svh; 
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 3svh; 
+  text-align: left;
+  transition: transform 0.15s;
+  transition: scale 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  scale: 1.03;
+}
+
 .text-mask {
   font-size: clamp(2svh, 4svh, 4svh);
   font-weight: bold;
@@ -288,7 +312,7 @@ body {
   border-radius: 0.5rem;
   cursor: pointer;
   box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: all 0.3s ease;
   opacity: 1;
   pointer-events: auto;
 }
@@ -299,17 +323,6 @@ body.fun-mode #modeToggle {
   pointer-events: auto;
 }
 
-body:not(.fun-mode) #modeToggle {
-  animation: bounceInTop 0.6s ease 4s forwards;
-  transform: none !important;
-}
-
-.fading {
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transition: none !important;
-}
-
 @keyframes bounceInTop {
   0%   { transform: translateY(-50%) scale(0.9); opacity: 0; }
   60%  { transform: translateY(10%) scale(1.05); opacity: 1; }
@@ -317,13 +330,8 @@ body:not(.fun-mode) #modeToggle {
   100% { transform: translateY(0) scale(1); opacity: 1; }
 }
 
-body:not(.fun-mode) #modeToggle:hover {
-  transform: scale(1.05) !important;
-}
-
 #modeToggle:hover {
-  transform: scale(1.05) !important;
-  transition: transform 0.3s ease !important;
+  transform: scale(1.05);
 }
 
 body:not(.fun-mode) .loop,
@@ -359,25 +367,30 @@ body:not(.fun-mode) .image-buttons img {
 .button {
   position: relative;
   z-index: 1;
-  width: 43vw;
-  border-radius: 3vw;
-  font-size: 4svh;
+  width: 43vw; 
+  border-radius: 3vw; 
+  font-size: 4svh; 
   font-weight: bold;
   text-decoration: none;
   color: #ffffff;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  padding: 3svh;
+  padding: 3svh; 
   text-align: left;
+  transition: transform 0.15s, scale 0.2s ease;
   overflow: hidden;
   opacity: 1;
   animation: none;
-  transition: transform 0.3s ease;
+  transform: none;
 }
 
 .button:hover {
-  transform: scale(1.03);
+  scale: 1.03;
+}
+
+body:not(.fun-mode) .button:hover {
+  scale: 1.03;
 }
 
 body.fun-mode .btn1 {
@@ -400,17 +413,6 @@ body:not(.fun-mode) .btn2,
 body:not(.fun-mode) .btn3 {
   animation: none !important;
 } 
-
-@keyframes bounceBackIn {
-  0%   { transform: translateY(-50%) scale(0.9); opacity: 0; }
-  60%  { transform: translateY(10%) scale(1.05); opacity: 1; }
-  80%  { transform: translateY(-3%) scale(0.98); }
-  100% { transform: translateY(0) scale(1); opacity: 1; }
-}
-
-.reappear {
-  animation: bounceBackIn 0.6s ease forwards;
-}
 
 @media (max-width: 1200px) {
   .image-buttons {
