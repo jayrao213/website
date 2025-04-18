@@ -15,7 +15,7 @@
             <a href="https://github.com/jayrao213?tab=repositories" target="_blank"><img src="github.png" alt="GitHub"></a>
             <a href="Jay_Rao_Resume.pdf" target="_blank"><img src="resume.png" alt="Resume"></a>
             <a href="mailto:jayrao2028@u.northwestern.edu"><img src="email.png" alt="Email"></a>
-            <a id="funToggle" title="Toggle Fun Mode" class="emoji-toggle">🎭</a>
+            <a id="funToggle" title="Toggle Fun Mode" class="emoji-toggle">😈</a>
           </div>
 
           <div class="center-home">
@@ -157,12 +157,12 @@
   
       const toggle = document.getElementById('funToggle');
       if (toggle) {
-        toggle.textContent = isFun ? '🧑‍💼' : '🎭';
+        toggle.textContent = isFun ? '😎' : '😈';
   
         toggle.addEventListener('click', () => {
           const isNowFun = document.body.classList.toggle('fun-mode');
           localStorage.setItem('funMode', isNowFun);
-          toggle.textContent = isNowFun ? '🧑‍💼' : '🎭';
+          toggle.textContent = isNowFun ? '😎' : '😈';
           resetAnimations();
           animateH1();
         });

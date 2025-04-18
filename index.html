@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="modeToggle">😈Crazy😈</button>
+  <button id="modeToggle">😈Fun😈</button>
 
   <div class="animated-title">
     <div class="text-top">
@@ -69,7 +69,7 @@
   
     const isFunMode = localStorage.getItem('funMode') === 'true';
     document.body.classList.toggle("fun-mode", isFunMode);
-    toggleBtn.textContent = isFunMode ? "😤Pro😤" : "😈Crazy😈";
+    toggleBtn.textContent = isFunMode ? "😎Pro😎" : "😈Fun😈";
   
     loopImgs.forEach(img => {
       const funSrc = img.dataset.fun;
@@ -98,7 +98,7 @@
   
       document.body.classList.toggle("fun-mode", isFunNow);
       localStorage.setItem("funMode", isFunNow);
-      toggleBtn.textContent = isFunNow ? "😤Pro😤" : "😈Crazy😈";
+      toggleBtn.textContent = isFunNow ? "😎Pro😎" : "😈Fun😈";
   
       setTimeout(() => {
         toggleBtn.style.transition = "";
