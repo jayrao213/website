@@ -67,49 +67,16 @@
     const toggleBtn = document.getElementById("modeToggle");
     const loopImgs = document.querySelectorAll(".loop");
   
-    const isFunMode = localStorage.getItem('funMode') === 'true';
-    document.body.classList.toggle("fun-mode", isFunMode);
-    toggleBtn.textContent = isFunMode ? "😎Pro😎" : "😈Fun😈";
-  
-    loopImgs.forEach(img => {
-      const funSrc = img.dataset.fun;
-      const seriousSrc = img.dataset.serious;
-  
-      if (isFunMode) {
-        img.style.display = "";
-        img.src = funSrc;
-      } else {
-        if (seriousSrc) {
-          img.src = seriousSrc;
-          img.style.display = "";
-        } else {
-          img.style.display = "none";
-        }
-      }
-    });
-  
-    toggleBtn.addEventListener("click", () => {
-      const isFunNow = !document.body.classList.contains("fun-mode");
-  
-      if (isFunNow) {
-        toggleBtn.style.transition = "none";
-        toggleBtn.style.opacity = "0";
-      }
-  
-      document.body.classList.toggle("fun-mode", isFunNow);
-      localStorage.setItem("funMode", isFunNow);
-      toggleBtn.textContent = isFunNow ? "😎Pro😎" : "😈Fun😈";
-  
-      setTimeout(() => {
-        toggleBtn.style.transition = "";
-        toggleBtn.style.opacity = "";
-      }, 10);
+    function applyModeUI(isFun) {
+      document.body.classList.toggle("fun-mode", isFun);
+      localStorage.setItem("funMode", isFun);
+      toggleBtn.textContent = isFun ? "😎Pro😎" : "😈Fun😈";
   
       loopImgs.forEach(img => {
         const funSrc = img.dataset.fun;
         const seriousSrc = img.dataset.serious;
   
-        if (isFunNow) {
+        if (isFun) {
           img.style.display = "";
           img.src = funSrc;
         } else {
@@ -121,14 +88,39 @@
           }
         }
       });
+  
+      if (isFun) {
+        toggleBtn.classList.add("fading");
+  
+        setTimeout(() => {
+          toggleBtn.classList.remove("fading");
+  
+          toggleBtn.classList.remove("reappear");
+          void toggleBtn.offsetWidth; 
+          toggleBtn.classList.add("reappear");
+          toggleBtn.style.animation = "none"; 
+          toggleBtn.offsetHeight; 
+          toggleBtn.style.animation = "bounceInTop 0.6s ease 0.4s forwards"; 
+        }, 4000);
+      } else {
+        toggleBtn.classList.remove("fading");
+      }
+    }
+  
+    const isFunMode = localStorage.getItem('funMode') === 'true';
+    applyModeUI(isFunMode);
+  
+    toggleBtn.addEventListener("click", () => {
+      const isFunNow = !document.body.classList.contains("fun-mode");
+      applyModeUI(isFunNow);
     });
   
     document.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', e => {
+      link.addEventListener('click', () => {
         localStorage.setItem('funMode', document.body.classList.contains('fun-mode'));
       });
     });
-  </script> 
+  </script>   
   
 </body>
 </html>
