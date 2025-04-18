@@ -208,30 +208,6 @@ body {
   gap: 2svh; 
 }
 
-.button {
-  position: relative;
-  z-index: 1;
-  width: 43vw; 
-  border-radius: 3vw; 
-  font-size: 4svh; 
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffffff;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  padding: 3svh; 
-  text-align: left;
-  transition: transform 0.15s;
-  transition: scale 0.2s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.button:hover {
-  scale: 1.03;
-}
-
 .text-mask {
   font-size: clamp(2svh, 4svh, 4svh);
   font-weight: bold;
@@ -386,7 +362,7 @@ body:not(.fun-mode) .image-buttons img {
 }
 
 .button:hover {
-  scale: 1.03;
+  scale: 1.01;
 }
 
 body:not(.fun-mode) .button:hover {
