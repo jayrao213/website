@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #121212;
   color: #ffffff;
   scroll-behavior: smooth;
@@ -318,8 +320,18 @@ body:not(.fun-mode) .center-home .home-button {
   opacity: 1 !important;
 }
 
+body:not(.fun-mode) .left-icons img,
+body:not(.fun-mode) .emoji-toggle,
+body:not(.fun-mode) .home-button,
+body:not(.fun-mode) .button a {
+  animation: none !important;
+  opacity: 1 !important;
+  transition: scale 0.2s ease !important;
+}
+
 body:not(.fun-mode) .left-icons img:hover,
-body:not(.fun-mode) .button a:hover,
-body:not(.fun-mode) .home-button:hover {
-  scale: 1 !important;
+body:not(.fun-mode) .emoji-toggle:hover,
+body:not(.fun-mode) .home-button:hover,
+body:not(.fun-mode) .button a:hover {
+  scale: 1.2;
 }
