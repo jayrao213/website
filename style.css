@@ -52,7 +52,7 @@ body {
 }
 
 .animated-title > div div {
-  font-size: clamp(4.5svh, 5svh, 5.5svh);
+  font-size: clamp(4svh, 3svh + 1svw, 5.5svh);
   font-weight: bold;
   padding: 1svh 0;
   position: absolute;
