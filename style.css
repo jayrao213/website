@@ -359,6 +359,7 @@ body:not(.fun-mode) .image-buttons img {
   opacity: 1;
   animation: none;
   transform: none;
+  position: relative;
 }
 
 .button:hover {
